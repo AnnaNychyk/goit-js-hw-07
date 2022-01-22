@@ -33,12 +33,7 @@ function onGalleryImageClick(evt) {
     
     const originalSrc = evt.target.dataset.source;
 
-    const modal = basicLightbox.create(`
-        <img src="${originalSrc}">
-    `)
+    const modal = basicLightbox.create(`<img src="${originalSrc}">`)
     modal.show();
 }
-
-
-
 

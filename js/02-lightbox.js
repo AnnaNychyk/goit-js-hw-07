@@ -28,7 +28,7 @@ function onGalleryImageClick(evt) {
     console.log(`<img src="${evt.target.src}">`);
 }
 
-const lightbox = new SimpleLightbox('.gallery a', { 
+const lightbox = new SimpleLightbox('.gallery a', {
     captionDelay: 250,
     captionsData: 'alt',
- })
+});
