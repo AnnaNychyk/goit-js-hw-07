@@ -34,7 +34,7 @@ function onGalleryImageClick(evt) {
     const originalSrc = evt.target.dataset.source;
 
     const modal = basicLightbox.create(
-        `<img src="${originalSrc}">`
+        `<img src="${originalSrc}">`,
         {
             onShow: (modal) => {
                 window.addEventListener("keydown", onClickEscape);
@@ -43,11 +43,14 @@ function onGalleryImageClick(evt) {
                 window.removeEventListener("keydown", onClickEscape),
         }
     );
+        
+    
     const onClickEscape = (event) => {
         if (event.key === "Escape") {
             modal.close();
         }
     };
+
     modal.show();
 }
 
