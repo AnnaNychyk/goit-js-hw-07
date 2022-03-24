@@ -33,7 +33,21 @@ function onGalleryImageClick(evt) {
     
     const originalSrc = evt.target.dataset.source;
 
-    const modal = basicLightbox.create(`<img src="${originalSrc}">`)
+    const modal = basicLightbox.create(
+        `<img src="${originalSrc}">`
+        {
+            onShow: (modal) => {
+                window.addEventListener("keydown", onClickEscape);
+            },
+            onClose: (modal) =>
+                window.removeEventListener("keydown", onClickEscape),
+        }
+    );
+    const onClickEscape = (event) => {
+        if (event.key === "Escape") {
+            modal.close();
+        }
+    };
     modal.show();
 }
 
